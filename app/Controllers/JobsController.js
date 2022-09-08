@@ -13,7 +13,7 @@ function drawJobs() {
 }
 function _drawJobsForm() {
   let template = "";
-  template += `
+  template += /*html*/ `
   
   <form onsubmit="app.jobsController.addJob()">
         <div class="form-floating mb-3">
@@ -64,6 +64,7 @@ export class JobsController {
 
   showJobs() {
     drawJobs();
+    console.log("showjobs");
   }
 
   addJobs() {
@@ -72,7 +73,8 @@ export class JobsController {
       const form = window.event.target;
       let formData = getFormData(form);
       jobsService.addJob(formData);
-      form.reset();
+      console.log(formData);
+      // form.reset();
       drawJobs();
     } catch (error) {
       console.log("addJob", error);

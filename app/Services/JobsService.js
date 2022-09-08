@@ -4,6 +4,7 @@ import { saveState } from "../Utils/Store.js";
 
 class JobsService {
   addJob(formData) {
+    debugger;
     let job = new Job(formData);
     appState.jobs = [job, ...appState.jobs];
     saveState("jobs", appState.jobs);
