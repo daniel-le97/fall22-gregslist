@@ -56,7 +56,6 @@ function _drawCarsForm() {
 
   document.getElementById("addListing").innerText = "🚗 Add Car";
 }
-function _drawButton() {}
 
 export class CarsController {
   constructor() {

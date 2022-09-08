@@ -22,12 +22,12 @@ function _drawJobsForm() {
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="company" required>
+          <input type="text" class="form-control" name="company" required minlength="3" maxlength="20">
           <label for="company">Company</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="number" class="form-control" name="hours" required min="1886" max="9999">
+          <input type="number" class="form-control" name="hours" required min="0" max="40">
           <label for="hours">Hours</label>
         </div>
 
@@ -59,6 +59,7 @@ function _drawJobsForm() {
 export class JobsController {
   constructor() {
     console.log("the jobs controller");
+    appState.on("jobs", drawJobs);
   }
 
   showJobs() {
@@ -71,6 +72,7 @@ export class JobsController {
       const form = window.event.target;
       let formData = getFormData(form);
       jobsService.addJob(formData);
+      form.reset();
       drawJobs();
     } catch (error) {
       console.log("addJob", error);

@@ -33,7 +33,7 @@ export class Job {
     </div>
     `;
   }
-  get JobFormTemplate() {
+  get Template() {
     return /*html*/ `
     <form onsubmit="app.jobsController.addJob()">
 
