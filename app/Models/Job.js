@@ -32,6 +32,7 @@ export class Job {
       </div>
     </div>
     `;
+    
   }
   get Template() {
     return /*html*/ `
@@ -74,4 +75,5 @@ export class Job {
       </form>
     `;
   }
+  
 }
